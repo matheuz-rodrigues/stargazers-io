@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUp, ArrowDown, MessageCircle, Share2, Bookmark, Star, GitFork } from 'lucide-react';
+import { ArrowUp, ArrowDown, MessageCircle, Share2, Bookmark, Star, GitFork, Crown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import clsx from 'clsx';
@@ -17,6 +17,7 @@ interface PostCardProps {
   comments: number;
   author: string;
   timeAgo: string;
+  isPromoted?: boolean;
 }
 
 export default function PostCard({
@@ -31,6 +32,7 @@ export default function PostCard({
   comments,
   author,
   timeAgo,
+  isPromoted = false,
 }: PostCardProps) {
   const [voteState, setVoteState] = useState<'up' | 'down' | null>(null);
   const [isSaved, setIsSaved] = useState(false);
@@ -39,7 +41,12 @@ export default function PostCard({
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass rounded-xl p-5 hover:border-[#8b5cf6] hover:border-opacity-30 transition-all"
+      className={clsx(
+        'glass rounded-xl p-5 transition-all group relative overflow-hidden',
+        isPromoted
+          ? '!border-2 !border-[#fbbf24] hover:!border-[#f59e0b]'
+          : 'hover:border-[#27272a]'
+      )}
     >
       <div className="flex gap-4">
         {/* Vote Section */}
@@ -84,6 +91,15 @@ export default function PostCard({
         <div className="flex-1 min-w-0">
           {/* Header */}
           <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+            {isPromoted && (
+              <>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 gradient-gold rounded text-xs font-semibold text-white">
+                  <Crown className="w-3 h-3" strokeWidth={2} />
+                  Promovido
+                </span>
+                <span>•</span>
+              </>
+            )}
             <span className="font-medium text-gray-300 hover:text-[#8b5cf6] cursor-pointer">
               {author}
             </span>

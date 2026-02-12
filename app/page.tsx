@@ -1,6 +1,6 @@
 'use client';
 
-import { Star, ExternalLink, Layout, FileText, Users, Settings, Home as HomeIcon, Palette, Type, Sparkles, Eye } from 'lucide-react';
+import { Star, ExternalLink, Layout, FileText, Users, Settings, Home as HomeIcon, Palette, Type, Sparkles, Eye, Search } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -469,7 +469,7 @@ export default function IndexPage() {
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">Search</label>
                     <div className="relative">
-                      <Star className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" strokeWidth={2} />
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" strokeWidth={2} />
                       <input
                         type="text"
                         placeholder="Search..."
@@ -488,6 +488,255 @@ export default function IndexPage() {
                       <button className="px-4 gradient-purple rounded-lg text-white font-medium hover:opacity-90">
                         Send
                       </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* More UI Components - Cards, Badges, Alerts, etc */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.28 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-2 mb-6">
+            <Layout className="w-6 h-6 text-[#fbbf24]" strokeWidth={2} />
+            <h2 className="text-2xl font-bold text-gray-100">Mais Componentes UI</h2>
+          </div>
+
+          <div className="space-y-6">
+            {/* Cards */}
+            <div className="glass rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-100 mb-4">Cards</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {/* Basic Card */}
+                <div className="glass rounded-xl p-4 hover:border-[#8b5cf6] transition-all cursor-pointer">
+                  <h4 className="text-base font-semibold text-gray-100 mb-2">Basic Card</h4>
+                  <p className="text-sm text-gray-400 mb-3">
+                    Simple card with title and description. Perfect for content display.
+                  </p>
+                  <div className="flex gap-2">
+                    <span className="px-2 py-1 bg-[#8b5cf6] bg-opacity-10 text-[#8b5cf6] rounded text-xs">Tag</span>
+                  </div>
+                </div>
+
+                {/* Card with Stats */}
+                <div className="glass rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-base font-semibold text-gray-100">Stats Card</h4>
+                    <Star className="w-5 h-5 text-[#fbbf24]" strokeWidth={2} />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-400">Projects</span>
+                      <span className="text-gray-200 font-semibold">42</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-400">Stars</span>
+                      <span className="text-gray-200 font-semibold">1.2k</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Highlighted Card */}
+                <div className="glass rounded-xl p-4 !border-2 !border-[#fbbf24]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="px-2 py-0.5 gradient-gold rounded text-xs font-semibold text-white">
+                      Premium
+                    </div>
+                  </div>
+                  <h4 className="text-base font-semibold text-gray-100 mb-2">Featured Card</h4>
+                  <p className="text-sm text-gray-400">
+                    Special card with golden border for premium content.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Badges & Tags */}
+            <div className="glass rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-100 mb-4">Badges & Tags</h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Status Badges</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-green-600 rounded-full text-white text-xs font-medium">Active</span>
+                    <span className="px-3 py-1 bg-yellow-600 rounded-full text-white text-xs font-medium">Pending</span>
+                    <span className="px-3 py-1 bg-red-600 rounded-full text-white text-xs font-medium">Inactive</span>
+                    <span className="px-3 py-1 bg-blue-600 rounded-full text-white text-xs font-medium">New</span>
+                    <span className="px-3 py-1 bg-gray-600 rounded-full text-white text-xs font-medium">Draft</span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Category Tags</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-[#8b5cf6] bg-opacity-10 border border-[#8b5cf6] border-opacity-20 rounded text-xs text-white">React</span>
+                    <span className="px-2 py-1 bg-[#fbbf24] bg-opacity-10 border border-[#fbbf24] border-opacity-20 rounded text-xs text-white">TypeScript</span>
+                    <span className="px-2 py-1 bg-[#18181b] border border-[#27272a] rounded text-xs text-gray-300">Next.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Alerts */}
+            <div className="glass rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-100 mb-4">Alerts</h3>
+              <div className="space-y-3">
+                <div className="p-4 bg-blue-600 bg-opacity-10 border border-blue-600 rounded-lg">
+                  <div className="flex gap-3">
+                    <div className="text-blue-400 font-bold">ℹ</div>
+                    <div>
+                      <p className="text-sm font-medium text-blue-300 mb-1">Information</p>
+                      <p className="text-xs text-blue-200">This is an informational alert message.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 bg-green-600 bg-opacity-10 border border-green-600 rounded-lg">
+                  <div className="flex gap-3">
+                    <div className="text-green-400 font-bold">✓</div>
+                    <div>
+                      <p className="text-sm font-medium text-green-300 mb-1">Success</p>
+                      <p className="text-xs text-green-200">Your action completed successfully!</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 bg-yellow-600 bg-opacity-10 border border-yellow-600 rounded-lg">
+                  <div className="flex gap-3">
+                    <div className="text-yellow-400 font-bold">⚠</div>
+                    <div>
+                      <p className="text-sm font-medium text-yellow-300 mb-1">Warning</p>
+                      <p className="text-xs text-yellow-200">Please review this before continuing.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 bg-red-600 bg-opacity-10 border border-red-600 rounded-lg">
+                  <div className="flex gap-3">
+                    <div className="text-red-400 font-bold">✗</div>
+                    <div>
+                      <p className="text-sm font-medium text-red-300 mb-1">Error</p>
+                      <p className="text-xs text-red-200">An error occurred. Please try again.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Form Controls */}
+            <div className="glass rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-100 mb-4">Form Controls</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Checkboxes & Radio */}
+                <div>
+                  <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Checkboxes & Radio</p>
+                  <div className="space-y-3">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" className="w-4 h-4 rounded border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" defaultChecked />
+                      <span className="text-sm text-gray-300">Checkbox selected</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" className="w-4 h-4 rounded border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" />
+                      <span className="text-sm text-gray-300">Checkbox unselected</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="radio" name="radio-demo" className="w-4 h-4 border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" defaultChecked />
+                      <span className="text-sm text-gray-300">Radio selected</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="radio" name="radio-demo" className="w-4 h-4 border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" />
+                      <span className="text-sm text-gray-300">Radio unselected</span>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Toggle Switches */}
+                <div>
+                  <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Switches</p>
+                  <div className="space-y-3">
+                    <label className="flex items-center justify-between cursor-pointer">
+                      <span className="text-sm text-gray-300">Enable notifications</span>
+                      <div className="relative">
+                        <input type="checkbox" className="sr-only peer" defaultChecked />
+                        <div className="w-11 h-6 bg-[#27272a] rounded-full peer peer-checked:bg-[#8b5cf6] transition-colors"></div>
+                        <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+                      </div>
+                    </label>
+                    <label className="flex items-center justify-between cursor-pointer">
+                      <span className="text-sm text-gray-300">Dark mode</span>
+                      <div className="relative">
+                        <input type="checkbox" className="sr-only peer" />
+                        <div className="w-11 h-6 bg-[#27272a] rounded-full peer peer-checked:bg-[#8b5cf6] transition-colors"></div>
+                        <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Progress & Avatars */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Progress Bars */}
+              <div className="glass rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-100 mb-4">Progress Bars</h3>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between text-xs text-gray-400 mb-2">
+                      <span>Default</span>
+                      <span>75%</span>
+                    </div>
+                    <div className="h-2 bg-[#27272a] rounded-full overflow-hidden">
+                      <div className="h-full gradient-purple rounded-full" style={{ width: '75%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-xs text-gray-400 mb-2">
+                      <span>Success</span>
+                      <span>100%</span>
+                    </div>
+                    <div className="h-2 bg-[#27272a] rounded-full overflow-hidden">
+                      <div className="h-full bg-green-600 rounded-full" style={{ width: '100%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-xs text-gray-400 mb-2">
+                      <span>Warning</span>
+                      <span>45%</span>
+                    </div>
+                    <div className="h-2 bg-[#27272a] rounded-full overflow-hidden">
+                      <div className="h-full bg-yellow-600 rounded-full" style={{ width: '45%' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Avatars */}
+              <div className="glass rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-100 mb-4">Avatars</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Sizes</p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full gradient-purple flex items-center justify-center text-white text-xs font-semibold">S</div>
+                      <div className="w-10 h-10 rounded-full gradient-purple flex items-center justify-center text-white text-sm font-semibold">M</div>
+                      <div className="w-12 h-12 rounded-full gradient-purple flex items-center justify-center text-white text-base font-semibold">L</div>
+                      <div className="w-16 h-16 rounded-full gradient-purple flex items-center justify-center text-white text-xl font-semibold">XL</div>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">With Status</p>
+                    <div className="flex items-center gap-3">
+                      <div className="relative">
+                        <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center text-white text-sm font-semibold">JS</div>
+                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#13151a]"></div>
+                      </div>
+                      <div className="relative">
+                        <div className="w-10 h-10 rounded-full bg-[#27272a] flex items-center justify-center text-gray-400 text-sm font-semibold">AB</div>
+                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#13151a]"></div>
+                      </div>
                     </div>
                   </div>
                 </div>

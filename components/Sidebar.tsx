@@ -43,7 +43,7 @@ export default function Sidebar() {
                 className={clsx(
                   'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all',
                   item.active
-                    ? 'bg-[#8b5cf6] bg-opacity-10 text-[#8b5cf6] font-medium'
+                    ? 'bg-[#8b5cf6] bg-opacity-10 text-white font-medium'
                     : 'text-gray-400 hover:bg-[#18181b] hover:text-gray-200'
                 )}
               >

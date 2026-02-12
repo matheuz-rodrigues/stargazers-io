@@ -4,6 +4,22 @@ import RightSidebar from '@/components/RightSidebar';
 import PostCard from '@/components/PostCard';
 
 const mockPosts = [
+  // Promoted Post
+  {
+    id: 'promoted-1',
+    title: '🚀 AI-Powered Code Review Assistant - Save 10+ Hours per Week',
+    description: 'Revolutionary AI tool that automatically reviews your pull requests, suggests improvements, catches bugs before deployment, and learns from your team\'s coding patterns. Trusted by 500+ companies.',
+    repoName: 'ai-tools/code-reviewer-pro',
+    repoLanguage: 'Python',
+    repoStars: 15420,
+    repoForks: 892,
+    tags: ['ai', 'code-review', 'automation', 'productivity'],
+    votes: 523,
+    comments: 87,
+    author: 'ai-tools-official',
+    timeAgo: 'Promovido',
+    isPromoted: true,
+  },
   {
     id: 1,
     title: 'Announcing React Query v5: The Future of Data Fetching',
