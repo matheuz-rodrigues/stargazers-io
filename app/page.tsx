@@ -210,74 +210,6 @@ export default function IndexPage() {
           </div>
         </motion.section>
 
-        {/* Components Section */}
-        <motion.section
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="mb-16"
-        >
-          <div className="flex items-center gap-2 mb-6">
-            <Settings className="w-6 h-6 text-[#fbbf24]" strokeWidth={2} />
-            <h2 className="text-2xl font-bold text-gray-100">Componentes & Variações</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-4">
-            {components.map((component, index) => (
-              <motion.div
-                key={component.name}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2 + index * 0.05 }}
-              >
-                <Link href={component.path}>
-                  <div className="glass rounded-xl p-5 hover:border-[#fbbf24] hover:border-opacity-30 transition-all group cursor-pointer">
-                    <div className="flex items-start gap-3 mb-3">
-                      <div className="w-2 h-2 rounded-full bg-[#fbbf24] mt-2"></div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-100 mb-1 group-hover:text-[#fbbf24] transition-colors">
-                          {component.name}
-                        </h3>
-                        <p className="text-sm text-gray-400 mb-3">
-                          {component.description}
-                        </p>
-                        
-                        <div className="mb-3">
-                          <p className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Features</p>
-                          <div className="flex flex-wrap gap-2">
-                            {component.features.map((feature) => (
-                              <span
-                                key={feature}
-                                className="px-2 py-1 bg-[#18181b] border border-[#27272a] rounded text-xs text-gray-300"
-                              >
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div>
-                          <p className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Variants</p>
-                          <div className="flex flex-wrap gap-2">
-                            {component.variants.map((variant) => (
-                              <span
-                                key={variant}
-                                className="px-2 py-1 bg-[#8b5cf6] bg-opacity-10 border border-[#8b5cf6] border-opacity-20 rounded text-xs text-white"
-                              >
-                                {variant}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
         {/* UI Elements - Buttons & Inputs */}
         <motion.section
           initial={{ y: 20, opacity: 0 }}
@@ -634,19 +566,19 @@ export default function IndexPage() {
                   <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Checkboxes & Radio</p>
                   <div className="space-y-3">
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="checkbox" className="w-4 h-4 rounded border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" defaultChecked />
+                      <input type="checkbox" className="w-4 h-4 rounded border-[#27272a] bg-[#18181b] text-[#8b5cf6] accent-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" defaultChecked />
                       <span className="text-sm text-gray-300">Checkbox selected</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="checkbox" className="w-4 h-4 rounded border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" />
+                      <input type="checkbox" className="w-4 h-4 rounded border-[#27272a] bg-[#18181b] text-[#8b5cf6] accent-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" />
                       <span className="text-sm text-gray-300">Checkbox unselected</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="radio" name="radio-demo" className="w-4 h-4 border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" defaultChecked />
+                      <input type="radio" name="radio-demo" className="w-4 h-4 border-[#27272a] bg-[#18181b] text-[#8b5cf6] accent-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" defaultChecked />
                       <span className="text-sm text-gray-300">Radio selected</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="radio" name="radio-demo" className="w-4 h-4 border-[#27272a] bg-[#18181b] text-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" />
+                      <input type="radio" name="radio-demo" className="w-4 h-4 border-[#27272a] bg-[#18181b] text-[#8b5cf6] accent-[#8b5cf6] focus:ring-[#8b5cf6] focus:ring-offset-0" />
                       <span className="text-sm text-gray-300">Radio unselected</span>
                     </label>
                   </div>
